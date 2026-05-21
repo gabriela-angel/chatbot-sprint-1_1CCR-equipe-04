@@ -29,8 +29,3 @@ Contexto do sistema:
 - Os usuários podem acompanhar suas recargas em tempo real.
 
 Seu foco principal é fornecer suporte operacional eficiente e melhorar a experiência de utilização da rede de carregamento.
-
-## Modelo de Testes
-
-|  Pergunta  |  Resposta Esperada  |
-|---|---|
