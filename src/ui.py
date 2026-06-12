@@ -5,6 +5,7 @@ from prompt_toolkit import PromptSession
 from prompt_toolkit.styles import Style
 import pyfiglet
 from datetime import datetime
+from tests.test_model import rodar_bateria_testes
 
 console = Console()
 session = PromptSession(style=Style.from_dict({"prompts": "#FFFFFF bold"}))
@@ -15,7 +16,7 @@ def show_banner():
     console.print(Panel.fit(
         "◆ GoodWe ChargeGrid Intelligence ◆\n"
         "Assistente virtual para suporte a estações de recarga e gestão energética.\n"
-        "Digite o comando 'sair' para encerrar.\n"
+        "Comandos: 'teste' para validação qualitativa; 'sair' para encerrar a sessão.\n"
         "Modelo: gpt-oss:120b via Ollama Cloud",
         title="",
         border_style="#FFFFFF"
@@ -46,9 +47,13 @@ def run_cli(engine):
             )
             continue
 
+        if user_input.lower() == "teste":
+            rodar_bateria_testes()
+            continue
+
         if user_input.lower() == "sair":
             console.print(
-                "\n👋  Encerrando o GoodWe ChargeGrid Assistant...",
+                "\n👋  Encerrando o GoodWe ChargeGrid Intelligence...",
                 style="red"
             )
             break
